@@ -1,5 +1,7 @@
 package com.springprj.myartistlist.models;
 
+import java.util.List;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -15,6 +17,8 @@ public class Post {
     private String url;
     private int score;
     private String rating;
+    private List<Long> tags;
+    private List<Long> artists;
 
     public Post() {
     }
@@ -26,10 +30,12 @@ public class Post {
         this.rating = rating;
     }
 
-    public Post(String url, int score, String rating) {
+    public Post(String url, int score, String rating, List<Long> tags, List<Long> artists) {
         this.url = url;
         this.score = score;
         this.rating = rating;
+        this.artists = artists;
+        this.tags = tags;
     }
 
     public long getId() {
@@ -38,6 +44,22 @@ public class Post {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public List<Long> getArtists() {
+        return artists;
+    }
+
+    public void setArtists(List<Long> artists) {
+        this.artists = artists;
+    }
+
+    public List<Long> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Long> tags) {
+        this.tags = tags;
     }
 
     public String getUrl() {

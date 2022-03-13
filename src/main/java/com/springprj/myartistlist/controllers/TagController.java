@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.springprj.myartistlist.models.Tag;
+import com.springprj.myartistlist.models.TagDetail;
 import com.springprj.myartistlist.services.TagService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,7 +43,7 @@ public class TagController {
     // chi tiet 1 artist
     @GetMapping("/{id}")
 
-    public Optional<Tag> tag(@PathVariable long id) {
+    public List<TagDetail> tag(@PathVariable long id) {
         return tagService.getById(id);
     }
 

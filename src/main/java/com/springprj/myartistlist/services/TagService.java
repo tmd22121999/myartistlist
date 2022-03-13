@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.springprj.myartistlist.models.Tag;
+import com.springprj.myartistlist.models.TagDetail;
 import com.springprj.myartistlist.repositories.TagRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +34,12 @@ public class TagService {
                                 "https://gelbooru.com/index.php?page=post&s=list&tags=feet")));
     }
 
-    public Optional<Tag> getById(long id) {
-        return null;
+    public List<TagDetail> getById(long id) {
+        return tagRepository.findAllTag(id);
     }
 
     public List<Tag> getByName(String name) {
+
         return null;
     }
 
