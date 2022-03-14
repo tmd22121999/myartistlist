@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.springprj.myartistlist.models.Post;
+import com.springprj.myartistlist.models.PostDetail;
 import com.springprj.myartistlist.services.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +34,7 @@ public class PostController {
         return postService.getAllPost();
     }
 
+    // test
     @GetMapping("/sample")
 
     public List<Post> postSample() {
@@ -42,25 +44,29 @@ public class PostController {
     // chi tiet 1 artist
     @GetMapping("/{id}")
 
-    public Optional<Post> post(@PathVariable long id) {
+    public List<PostDetail> post(@PathVariable long id) {
         return postService.getById(id);
     }
 
+    // query
     @GetMapping("/")
     public List<Post> post(@RequestParam("name") String name) {
         return postService.getByName(name);
     }
 
+    // insert
     @PostMapping(value = { "", "add" })
     public Post InsertPost(@RequestBody Post newPost) {
         return postService.InsertPost(newPost);
     }
 
+    // update
     @PutMapping("/{id}")
     public Optional<Post> UpdatePost(@RequestBody Post newPost, @PathVariable long id) {
         return postService.UpdatePost(id, newPost);
     }
 
+    // delete
     @DeleteMapping("/{id}")
     public Optional<Post> DeletePost(@PathVariable long id) {
         return postService.DeletePost(id);

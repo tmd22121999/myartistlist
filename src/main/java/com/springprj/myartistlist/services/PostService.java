@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.springprj.myartistlist.models.Post;
+import com.springprj.myartistlist.models.PostDetail;
 import com.springprj.myartistlist.repositories.PostRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,8 +33,8 @@ public class PostService {
                         8, "sfw"));
     }
 
-    public Optional<Post> getById(long id) {
-        return null;
+    public List<PostDetail> getById(long id) {
+        return postRepository.findPostDetailByID(id);
     }
 
     public List<Post> getByName(String name) {

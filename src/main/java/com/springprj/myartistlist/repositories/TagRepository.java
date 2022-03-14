@@ -16,6 +16,6 @@ public interface TagRepository extends MongoRepository<Tag, Long> {
             "{'$lookup':{'from': 'Post','localField':'_id','foreignField': 'tags','as': 'posts'}}",
             //
     })
-    List<TagDetail> findAllTag(Long id);
+    List<TagDetail> findTagDetailByID(Long id);
 
 }

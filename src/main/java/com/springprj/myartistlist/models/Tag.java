@@ -11,6 +11,7 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @Document(collection = "Tag")
+
 public class Tag {
     @Id
     private long id;

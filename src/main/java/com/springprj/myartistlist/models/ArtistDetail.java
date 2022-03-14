@@ -3,27 +3,26 @@ package com.springprj.myartistlist.models;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
 @AllArgsConstructor
-@Document(collection = "Artist")
-public class Artist {
+public class ArtistDetail {
     @Id
     private long id;
     private String name;
     private List<String> other_names;
     private long score;
     private List<String> categories;
+    private List<Post> posts;
     private List<String> other_links;
 
-    public Artist() {
+    public ArtistDetail() {
     }
 
-    public Artist(long id, String name, List<String> other_names, long score, List<String> categories,
+    public ArtistDetail(long id, String name, List<String> other_names, long score, List<String> categories,
             List<String> other_links) {
         this.id = id;
         this.name = name;
@@ -49,24 +48,28 @@ public class Artist {
         return score;
     }
 
-    public List<String> getOther_links() {
-        return other_links;
+    public List<Post> getPosts() {
+        return posts;
     }
 
-    public void setOther_links(List<String> other_links) {
-        this.other_links = other_links;
+    public void setPosts(List<Post> posts) {
+        this.posts = posts;
     }
 
     public void setScore(long score) {
         this.score = score;
     }
 
-    public Artist(String name) {
-        this.name = name;
-    }
-
     public long getId() {
         return id;
+    }
+
+    public List<String> getOther_links() {
+        return other_links;
+    }
+
+    public void setOther_links(List<String> other_links) {
+        this.other_links = other_links;
     }
 
     public void setId(long id) {

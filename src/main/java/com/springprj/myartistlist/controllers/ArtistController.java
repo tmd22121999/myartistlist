@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.springprj.myartistlist.models.Artist;
+import com.springprj.myartistlist.models.ArtistDetail;
 import com.springprj.myartistlist.services.ArtistService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,7 +44,7 @@ public class ArtistController {
     // chi tiet 1 artist
     @GetMapping("/{id}")
 
-    public Optional<Artist> artist(@PathVariable long id) {
+    public List<ArtistDetail> artist(@PathVariable long id) {
         return artistService.getById(id);
     }
 

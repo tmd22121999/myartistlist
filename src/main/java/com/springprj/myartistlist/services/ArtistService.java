@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import com.springprj.myartistlist.models.Artist;
+import com.springprj.myartistlist.models.ArtistDetail;
 import com.springprj.myartistlist.repositories.ArtistRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,8 +25,8 @@ public class ArtistService {
         return artistRepository.findAll();
     }
 
-    public Optional<Artist> getById(long id) {
-        return artistRepository.findById(id);
+    public List<ArtistDetail> getById(long id) {
+        return artistRepository.findArtistDetailByID(id);
     }
 
     public List<Artist> getByName(String name) {
@@ -47,7 +48,7 @@ public class ArtistService {
     }
 
     public List<Artist> getSampleArtist() {
-        return List.of(new Artist(1, "aa", List.of(), 8, List.of()),
-                new Artist(1, "aa", List.of("aa", "v"), 9, List.of("aa", "v")));
+        return List.of(new Artist(1, "aa", List.of(), 8, List.of(), List.of()),
+                new Artist(1, "aa", List.of("aa", "v"), 9, List.of("aa", "v"), List.of()));
     }
 }
