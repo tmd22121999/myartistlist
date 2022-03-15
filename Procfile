@@ -1,2 +1,1 @@
-web: server/target/start com.herokuapp.lombok.Web
-web: java $JAVA_OPTS -jar target/heroku-demo-0.0.1-SNAPSHOT.jar -Dserver.port=$PORT $JAR_OPTS
+web: java -Dserver.port=$PORT -jar target/demo-0.0.1-SNAPSHOT.jar
