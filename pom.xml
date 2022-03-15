@@ -52,6 +52,7 @@
 			</plugin>
 			<plugin>
 				<groupId>io.freefair.lombok</groupId>
+				<artifactId>io.freefair.lombok.gradle.plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>
