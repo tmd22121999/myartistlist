@@ -9,7 +9,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 @Document(collection = "Post")
 public class Post {
     @Id
