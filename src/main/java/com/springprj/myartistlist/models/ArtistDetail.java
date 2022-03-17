@@ -4,11 +4,9 @@ import java.util.List;
 
 import org.springframework.data.annotation.Id;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class ArtistDetail {
     @Id
     private long id;

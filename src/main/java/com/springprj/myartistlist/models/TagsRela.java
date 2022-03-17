@@ -2,11 +2,9 @@ package com.springprj.myartistlist.models;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 @Document(collection = "TagRela")
 public class TagsRela {
     private long tagID;
