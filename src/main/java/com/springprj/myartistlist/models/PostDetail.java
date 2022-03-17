@@ -8,7 +8,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 public class PostDetail {
     @Id
     private long id;
