@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 
 @Data
-@AllArgsConstructor
 @Document(collection = "TagRela")
 public class TagsRela {
     private long tagID;
