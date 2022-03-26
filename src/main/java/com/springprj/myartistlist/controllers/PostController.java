@@ -8,6 +8,7 @@ import com.springprj.myartistlist.models.PostDetail;
 import com.springprj.myartistlist.services.PostService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,6 +24,8 @@ import lombok.AllArgsConstructor;
 @RestController // Chỉ định HomeController là Controller
 @RequestMapping("/v1/post")
 @AllArgsConstructor
+@CrossOrigin
+
 public class PostController {
     @Autowired
     private PostService postService;
