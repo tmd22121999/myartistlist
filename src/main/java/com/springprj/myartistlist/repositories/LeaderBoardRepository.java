@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 public interface LeaderBoardRepository extends MongoRepository<LeaderBoard, Long> {
     @Aggregation(pipeline = {
             "{'$sort':{'score': -1}}",
+            "{$limit: 10}",
     })
     List<LeaderBoard> findHiscore();
 }
