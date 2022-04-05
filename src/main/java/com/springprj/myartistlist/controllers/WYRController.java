@@ -52,8 +52,8 @@ public class WYRController {
         return wouldyouratherService.InsertWouldYouRather(newWouldYouRather);
     }
 
-    @PutMapping("/{id}")
-    public Optional<WouldYouRather> UpdateWouldYouRather(@RequestBody WouldYouRather newWouldYouRather,
+    @PutMapping(value = "/{id}", produces = { "application/json" })
+    public WouldYouRather UpdateWouldYouRather(@RequestBody WouldYouRather newWouldYouRather,
             @PathVariable long id) {
         return wouldyouratherService.UpdateWouldYouRather(id, newWouldYouRather);
     }

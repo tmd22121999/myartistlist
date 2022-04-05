@@ -37,8 +37,20 @@ public class WYRService {
         return wyrRepository.save(newWouldYouRather);
     }
 
-    public Optional<WouldYouRather> UpdateWouldYouRather(long id, WouldYouRather newWouldYouRather) {
-        return null;
+    public WouldYouRather UpdateWouldYouRather(long id, WouldYouRather newWouldYouRather) {
+        Optional<WouldYouRather> oldWYR = wyrRepository.findById(id);
+        if (oldWYR.isPresent()) {
+            WouldYouRather _WouldYouRather = oldWYR.get();
+            _WouldYouRather.setQuestion(newWouldYouRather.getQuestion());
+            _WouldYouRather.setAnswer1(newWouldYouRather.getAnswer1());
+            _WouldYouRather.setAnswer2(newWouldYouRather.getAnswer2());
+            _WouldYouRather.setCountAnswer1(newWouldYouRather.getCountAnswer1());
+            _WouldYouRather.setCountAnswer2(newWouldYouRather.getCountAnswer2());
+            System.out.println(_WouldYouRather.getAnswer1());
+            return _WouldYouRather;
+        } else {
+            return newWouldYouRather;
+        }
     }
 
     public Optional<WouldYouRather> DeleteWouldYouRather(long id) {
