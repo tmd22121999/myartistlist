@@ -42,7 +42,6 @@ public class WYRService {
         if (oldWYR.isPresent()) {
             WouldYouRather _WouldYouRather = oldWYR.get();
             _WouldYouRather.setData(newWouldYouRather);
-            System.out.println(_WouldYouRather.getAnswer1());
             return wyrRepository.save(_WouldYouRather);
         } else {
             return newWouldYouRather;
