@@ -29,6 +29,15 @@ public class WouldYouRather {
         CountAnswer2 = countAnswer2;
     }
 
+    public void setData(WouldYouRather newWYR) {
+        Question = newWYR.getQuestion() != null ? newWYR.getQuestion() : Question;
+        Answer1 = newWYR.getAnswer1() != null ? newWYR.getAnswer1() : Answer1;
+        Answer2 = newWYR.getAnswer2() != null ? newWYR.getAnswer2() : Answer2;
+        CountAnswer1 = newWYR.getCountAnswer1();
+        CountAnswer2 = newWYR.getCountAnswer2();
+        return;
+    }
+
     public Long getID() {
         return ID;
     }
